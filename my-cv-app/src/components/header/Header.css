@@ -1,0 +1,100 @@
+.logo-name-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-indent: 40px;
+
+}
+.name {
+    padding-left: 50px;
+}
+.contacts {
+    padding: 12px;
+}
+.photo {
+    width: 200px;
+    height: 200px;
+    background-image: url("../../assets/photo.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 3px solid rgb(215, 149, 35);
+}
+
+.mail {
+    color: rgb(170, 170, 223);
+    text-decoration: underline;
+}
+.contacts {
+    display: flex;
+    justify-content: space-evenly;
+    border: 3px solid rgb(81, 175, 225);
+    border-left: none;
+    border-right: none;
+}
+.cont-wrap {
+    display: flex;
+    flex-direction: column;
+}
+.link {
+    padding: 10px;
+    font-size: 22px;
+}
+a {
+    text-decoration: none;
+    position: relative;
+    color: #007bff;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+a:hover {
+    color: rgb(170, 170, 223);
+}
+.sum-wrap {
+    margin-top: 80px;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 50%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+    100% { border-right: none;}
+}
+
+@keyframes hideCursor {
+    to { border-color: transparent; }
+}
+
+.name {
+    font-family: monospace;
+    border-right: 2px solid rgb(54, 230, 27);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(20, end) forwards, blink 0.7s;
+}
+.name::after {
+    content: "";
+    border-right: 2px solid rgb(54, 230, 27);
+    animation: 
+        blink 0.7s step-end infinite, 
+        hideCursor 0s 3s forwards;
+}
